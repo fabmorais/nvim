@@ -1,7 +1,6 @@
 local set = vim.opt
 
-vim.notify = require("notify")
-
+set.mouse = 'a'
 set.expandtab = true
 set.smarttab = true
 set.shiftwidth = 2
@@ -27,3 +26,5 @@ set.hidden = true
 set.list = true
 set.listchars:append("space:⋅")
 set.listchars:append("eol:↴")
+
+vim.notify = require("notify")

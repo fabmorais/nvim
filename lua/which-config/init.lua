@@ -1,4 +1,21 @@
 local wk = require('which-key')
+wk.setup {
+  plugins = {
+    marks = false,
+    registers = false,
+    spelling = { enabled = false, suggestions = 20 },
+    presets = {
+      operators = false,
+      motions = false,
+      text_objects = false,
+      windows = false,
+      nav = false,
+      z = false,
+      g = false
+    }
+  }
+}
+
 local Terminal = require('toggleterm.terminal').Terminal
 
 local toggle_float = function()
@@ -12,6 +29,8 @@ local toggle_lazygit = function()
 end
 
 local mappings = {
+  ['/'] = {':CommentToggle<cr>', 'Toggle Comment'},
+  c = {':67,69CommentToggle<cr>', 'Range Toggle Comment'},
   q = { ':q<cr>', 'Quit' },
   Q = { ':wq<cr>', 'Save & Quit' },
   w = { ':w<cr>', 'Save' },
@@ -47,6 +66,16 @@ local mappings = {
     n = { '<cmd>Lspsaga diagnostic_jump_next<cr>', "Go To Next Diagnostic" },
     N = { '<cmd>Lspsaga diagnostic_jump_prev<cr>', "Go To Previous Diagnostic" }
   },
+  p = {
+    name = "Packer",
+    r = { ":PackerClean<cr>", "Remove Unused Plugins" },
+    c = { ":PackerCompile profile=true<cr>", "Recompile Plugins" },
+    i = { ":PackerInstall<cr>", "Install Plugins" },
+    p = { ":PackerProfile<cr>", "Packer Profile" },
+    s = { ":PackerSync<cr>", "Sync Plugins" },
+    S = { ":PackerStatus<cr>", "Packer Status" },
+    u = { ":PackerUpdate<cr>", "Update Plugins" }
+  }
 }
 local opts = { prefix = '<leader>' }
 wk.register(mappings, opts)
