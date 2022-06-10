@@ -6,6 +6,16 @@ local sources = {
   formatting.eslint,
   formatting.autopep8,
   formatting.stylua,
+  formatting.gofmt,
+  formatting.goimports,
+  formatting.yapf,
+  formatting.terrafmt,
+  formatting.terraform_fmt,
+  formatting.uncrustify,
+  formatting.tidy,
+  formatting.standardjs,
+  formatting.prettier_standard,
+  formatting.prettier,
 }
 
 null_ls.setup({

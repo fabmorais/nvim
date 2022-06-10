@@ -1,4 +1,4 @@
-return require 'packer'.startup(function()
+return require 'packer'.startup(function(use)
   use 'wbthomason/packer.nvim'
   use 'EdenEast/nightfox.nvim'
   use 'kyazdani42/nvim-web-devicons'
@@ -13,6 +13,23 @@ return require 'packer'.startup(function()
     requires = { { 'nvim-lua/plenary.nvim' } }
   }
   use 'sunjon/shade.nvim'
+  use 'folke/which-key.nvim'
+  use 'akinsho/toggleterm.nvim'
+
+  use {
+    'lewis6991/gitsigns.nvim',
+    requires = { 'nvim-lua/plenary.nvim' },
+    config = function()
+      require('gitsigns').setup { current_line_blame = true }
+    end
+  }
+
+  use 'terrortylor/nvim-comment'
+  use 'norcalli/nvim-colorizer.lua'
+  use 'glepnir/dashboard-nvim'
+  use 'lukas-reineke/indent-blankline.nvim'
+  use 'windwp/nvim-autopairs'
+  use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
 
   --> lsp
   use("neovim/nvim-lspconfig") --> Collection of configurations for built-in LSP client

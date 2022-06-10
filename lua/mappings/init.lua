@@ -1,9 +1,22 @@
 local map = vim.api.nvim_set_keymap
-local opts = {noremap = true, silent = true}
+local opts = { noremap = true, silent = true }
 
 vim.g.mapleader = ' '
 
 map('n', '<leader>e', ':NvimTreeToggle<CR>', opts)
+map('n', '<C-h>', '<C-w>h', { noremap = true, silent = false })
+map('n', '<C-l>', '<C-w>l', { noremap = true, silent = false })
+map('n', '<C-j>', '<C-w>j', { noremap = true, silent = false })
+map('n', '<C-k>', '<C-w>k', { noremap = true, silent = false })
+
+map('v', '<', '<gv', { noremap = true, silent = false })
+map('v', '>', '<gv', { noremap = true, silent = false })
+
+
+map("n", "<C-u>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<cr>",
+  { noremap = true, silent = true })
+map("n", "<C-d>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<cr>",
+  { noremap = true, silent = true })
 
 --- barbar mappings ---
 -- Move to previous/next
@@ -46,4 +59,3 @@ map('n', '<Space>bw', ':BufferOrderByWindowNumber<CR>', opts)
 --> Telescope mappings
 map('n', '<leader>ff', ':Telescope find_files<CR>', opts)
 map('n', '<leader>fg', ':Telescope live_grep<CR>', opts)
-

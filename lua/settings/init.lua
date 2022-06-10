@@ -24,3 +24,6 @@ set.cursorline = true
 
 set.hidden = true
 
+set.list = true
+set.listchars:append("space:⋅")
+set.listchars:append("eol:↴")
