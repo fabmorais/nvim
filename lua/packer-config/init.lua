@@ -1,6 +1,7 @@
 return require 'packer'.startup(function(use)
   use 'wbthomason/packer.nvim'
-  use 'EdenEast/nightfox.nvim'
+  -- use 'EdenEast/nightfox.nvim'
+  use 'navarasu/onedark.nvim'
   use 'kyazdani42/nvim-web-devicons'
   use 'kyazdani42/nvim-tree.lua'
   use 'rcarriga/nvim-notify'

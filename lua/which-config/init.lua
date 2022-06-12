@@ -35,10 +35,15 @@ local mappings = {
   Q = { ':wq<cr>', 'Save & Quit' },
   w = { ':w<cr>', 'Save' },
   x = { ":bdelete<cr>", "Close" },
+  -- d = { ":Dashboard<cr>", "Dashboard" },
   E = { ":e ~/.config/nvim/init.lua<cr>", "Edit config" },
   f = {
     f = { ":Telescope find_files<cr>", "Telescope Find Files" },
     g = { ":Telescope live_grep<cr>", "Telescope Live Grep" },
+    o = { ":Telescope oldfiles<cr>", "Telescope Old Files" },
+  },
+  b = {
+    m = { ":Telescope marks<cr>", "Bookmarks"},
   },
   t = {
     t = { ":ToggleTerm<cr>", "Split Below" },
