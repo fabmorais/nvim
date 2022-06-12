@@ -1,6 +1,13 @@
 require('onedark').setup {
   style = 'darker',
-  term_colors = true,
+  code_style = {
+    comments = 'italic',
+  },
+
+  highlights = {
+    TSVariable = { fg = '$red' },
+  }
 }
 
 require('onedark').load()
+
