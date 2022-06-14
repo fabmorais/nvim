@@ -34,6 +34,14 @@ local servers = {
   "sumneko_lua",
   "ltex",
   "eslint",
+  "quick_lint_js",
+  "terraformls",
+  "terraform_lsp",
+  "tflint",
+  "clangd",
+  "diagnosticls",
+  "gopls",
+  "golangci_lint_ls",
 }
 
 ---@diagnostic disable-next-line: undefined-global
@@ -57,7 +65,7 @@ lsp_installer.on_server_ready(function(server)
     capabilities = capabilities,
     settings = {
       Lua = {
-        diagnostics = { globals = {'vim'} }
+        diagnostics = { globals = { 'vim' } }
       }
     }
   }
