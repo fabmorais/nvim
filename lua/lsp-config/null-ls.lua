@@ -5,6 +5,8 @@ local formatting = null_ls.builtins.formatting
 local sources = {
   formatting.eslint,
   formatting.autopep8,
+  formatting.black,
+  formatting.shfmt,
   formatting.stylua,
   formatting.gofmt,
   formatting.goimports,
@@ -12,6 +14,8 @@ local sources = {
   formatting.terrafmt,
   formatting.terraform_fmt,
   formatting.uncrustify,
+  formatting.clang_format,
+  formatting.cmake_format,
   formatting.tidy,
   formatting.standardjs,
   formatting.prettier_standard,
