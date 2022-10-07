@@ -1,6 +1,6 @@
 local set = vim.opt
 
-set.mouse = 'a'
+set.mouse = "a"
 set.expandtab = true
 set.smarttab = true
 set.shiftwidth = 2
@@ -15,16 +15,18 @@ set.splitbelow = true
 set.splitright = true
 set.wrap = false
 set.scrolloff = 5
-set.fileencoding = 'utf-8'
+set.fileencoding = "utf-8"
 set.termguicolors = true
 
 set.relativenumber = true
+set.number = true
 set.cursorline = true
 
 set.hidden = true
 
 set.list = true
-set.listchars:append("space:⋅")
+-- set.listchars:append("space:⋅")
 -- set.listchars:append("eol:↴")
+-- set.clipboard = "unnamedplus"
 
 vim.notify = require("notify")
