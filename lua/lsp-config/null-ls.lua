@@ -4,6 +4,7 @@ local formatting = null_ls.builtins.formatting
 
 local sources = {
   formatting.eslint,
+  formatting.eslint_d,
   formatting.autopep8,
   formatting.black,
   formatting.shfmt,
@@ -32,7 +33,10 @@ null_ls.setup({
         group = augroup,
         buffer = bufnr,
         callback = function()
-          vim.lsp.buf.format()
+          vim.lsp.buf.format({
+            timeout_ms = 5000,
+            bufnr = bufnr,
+          })
         end,
       })
     end
