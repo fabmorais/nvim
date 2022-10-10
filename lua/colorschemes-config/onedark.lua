@@ -1,13 +1,13 @@
-require('onedark').setup {
-  style = 'darker',
+require("onedark").setup({
+  style = "darker",
+  transparent = true,
   code_style = {
-    comments = 'italic',
+    comments = "italic",
   },
 
   highlights = {
-    TSVariable = { fg = '$red' },
-  }
-}
+    TSVariable = { fg = "$red" },
+  },
+})
 
-require('onedark').load()
-
+require("onedark").load()

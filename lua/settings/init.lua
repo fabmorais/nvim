@@ -28,5 +28,3 @@ set.list = true
 -- set.listchars:append("space:⋅")
 -- set.listchars:append("eol:↴")
 -- set.clipboard = "unnamedplus"
-
-vim.notify = require("notify")
