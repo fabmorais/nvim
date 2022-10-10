@@ -1,36 +1,36 @@
-return require 'packer'.startup(function(use)
-  use 'wbthomason/packer.nvim'
+return require("packer").startup(function(use)
+  use("wbthomason/packer.nvim")
   -- use 'EdenEast/nightfox.nvim'
-  use 'navarasu/onedark.nvim'
-  use 'kyazdani42/nvim-web-devicons'
-  use 'kyazdani42/nvim-tree.lua'
-  use 'rcarriga/nvim-notify'
-  use 'nvim-lualine/lualine.nvim'
-  use 'romgrk/barbar.nvim'
-  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', requires = 'p00f/nvim-ts-rainbow' }
-  use 'nvim-treesitter/nvim-treesitter-refactor'
-  use {
-    'nvim-telescope/telescope.nvim',
-    requires = { { 'nvim-lua/plenary.nvim' } }
-  }
-  use 'sunjon/shade.nvim'
-  use 'folke/which-key.nvim'
-  use 'akinsho/toggleterm.nvim'
+  use("navarasu/onedark.nvim")
+  use("kyazdani42/nvim-web-devicons")
+  use("kyazdani42/nvim-tree.lua")
+  use("rcarriga/nvim-notify")
+  use("nvim-lualine/lualine.nvim")
+  use("romgrk/barbar.nvim")
+  use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate", requires = "p00f/nvim-ts-rainbow" })
+  use("nvim-treesitter/nvim-treesitter-refactor")
+  use({
+    "nvim-telescope/telescope.nvim",
+    requires = { { "nvim-lua/plenary.nvim" } },
+  })
+  -- use("sunjon/shade.nvim")
+  use("folke/which-key.nvim")
+  use("akinsho/toggleterm.nvim")
 
-  use {
-    'lewis6991/gitsigns.nvim',
-    requires = { 'nvim-lua/plenary.nvim' },
+  use({
+    "lewis6991/gitsigns.nvim",
+    requires = { "nvim-lua/plenary.nvim" },
     config = function()
-      require('gitsigns').setup { current_line_blame = true }
-    end
-  }
+      require("gitsigns").setup({ current_line_blame = true })
+    end,
+  })
 
-  use 'terrortylor/nvim-comment'
-  use 'norcalli/nvim-colorizer.lua'
-  use 'glepnir/dashboard-nvim'
-  use 'lukas-reineke/indent-blankline.nvim'
-  use 'windwp/nvim-autopairs'
-  use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+  use("terrortylor/nvim-comment")
+  use("norcalli/nvim-colorizer.lua")
+  use("glepnir/dashboard-nvim")
+  use("lukas-reineke/indent-blankline.nvim")
+  use("windwp/nvim-autopairs")
+  use({ "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" })
 
   --> lsp
   use("neovim/nvim-lspconfig") --> Collection of configurations for built-in LSP client
