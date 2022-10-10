@@ -13,7 +13,7 @@ return require("packer").startup(function(use)
     "nvim-telescope/telescope.nvim",
     requires = { { "nvim-lua/plenary.nvim" } },
   })
-  -- use("sunjon/shade.nvim")
+
   use("folke/which-key.nvim")
   use("akinsho/toggleterm.nvim")
 
@@ -25,6 +25,7 @@ return require("packer").startup(function(use)
     end,
   })
 
+  use("levouh/tint.nvim")
   use("terrortylor/nvim-comment")
   use("norcalli/nvim-colorizer.lua")
   use("glepnir/dashboard-nvim")

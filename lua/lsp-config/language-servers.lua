@@ -65,9 +65,9 @@ lsp_installer.on_server_ready(function(server)
     capabilities = capabilities,
     settings = {
       Lua = {
-        diagnostics = { globals = { 'vim' } }
-      }
-    }
+        diagnostics = { globals = { "vim" } },
+      },
+    },
   }
 
   server:setup(default_opts)
