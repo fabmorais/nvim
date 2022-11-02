@@ -1,3 +1,4 @@
+-- TODO: refactor this to mason.nvim -> https://github.com/williamboman/nvim-lsp-installer/discussions/876
 local lsp_installer = require("nvim-lsp-installer")
 
 local on_attach = function(client, bufnr)
@@ -42,6 +43,7 @@ local servers = {
   "diagnosticls",
   "gopls",
   "golangci_lint_ls",
+  "rust_analyzer",
 }
 
 ---@diagnostic disable-next-line: undefined-global
