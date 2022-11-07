@@ -21,6 +21,7 @@ local sources = {
   formatting.standardjs,
   formatting.prettier_standard,
   formatting.prettier,
+  formatting.rustfmt,
 }
 
 null_ls.setup({

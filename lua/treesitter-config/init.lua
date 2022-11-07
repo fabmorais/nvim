@@ -11,6 +11,8 @@ require("nvim-treesitter.configs").setup({
     "css",
     "cpp",
     "html",
+    "rust",
+    "toml",
   },
 
   sync_install = false,

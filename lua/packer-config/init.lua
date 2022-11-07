@@ -1,9 +1,8 @@
 return require("packer").startup(function(use)
   use("wbthomason/packer.nvim")
-  -- use 'EdenEast/nightfox.nvim'
-  use("navarasu/onedark.nvim")
   use("kyazdani42/nvim-web-devicons")
   use("kyazdani42/nvim-tree.lua")
+  use("mofiqul/dracula.nvim")
   use("rcarriga/nvim-notify")
   use("nvim-lualine/lualine.nvim")
   use("romgrk/barbar.nvim")
@@ -33,7 +32,12 @@ return require("packer").startup(function(use)
   use("windwp/nvim-autopairs")
   use({ "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" })
 
+  --> debugging
+  use("mfussenegger/nvim-dap")
+
   --> lsp
+  -- use("williamboman/mason.nvim")
+  -- use("williamboman/mason-lspconfig.nvim")
   use("neovim/nvim-lspconfig") --> Collection of configurations for built-in LSP client
   use("williamboman/nvim-lsp-installer") --> Companion plugin for lsp-config, allows us to seamlesly install language servers
   use("jose-elias-alvarez/null-ls.nvim") --> inject lsp diagnistocs, formattings, code actions, and more ...
@@ -43,4 +47,5 @@ return require("packer").startup(function(use)
   use("hrsh7th/cmp-nvim-lsp") --> LSP source for nvim-cmp
   use("saadparwaiz1/cmp_luasnip") --> Snippets source for nvim-cmp
   use("L3MON4D3/LuaSnip") --> Snippets plugin
+  use("simrat39/rust-tools.nvim")
 end)
