@@ -59,6 +59,6 @@ map("n", "<Space>bl", ":BufferOrderByLanguage<CR>", opts)
 map("n", "<Space>bw", ":BufferOrderByWindowNumber<CR>", opts)
 
 --> Telescope mappings
-map("n", "<leader>ff", ":Telescope find_files<CR>", opts)
-map("n", "<leader>fg", ":Telescope live_grep<CR>", opts)
-map("n", "<leader>fh", ":Telescope keymaps<CR>", opts)
+-- map("n", "<leader>ff", ":Telescope find_files<CR>", opts)
+-- map("n", "<leader>fg", ":Telescope live_grep<CR>", opts)
+-- map("n", "<leader>fh", ":Telescope keymaps<CR>", opts)

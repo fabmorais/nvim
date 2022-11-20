@@ -38,14 +38,19 @@ local mappings = {
   -- d = { ":Dashboard<cr>", "Dashboard" },
   E = { ":e ~/.config/nvim/init.lua<cr>", "Edit config" },
   f = {
+    name = "Telescope",
     f = { ":Telescope find_files<cr>", "Telescope Find Files" },
     g = { ":Telescope live_grep<cr>", "Telescope Live Grep" },
     o = { ":Telescope oldfiles<cr>", "Telescope Old Files" },
+    h = { ":Telescope keymaps<cr>", "Telescope Keymaps" },
+    b = { ":Telescope buffers<cr>", "Telescope Buffers" },
   },
   b = {
+    name = "Telescope Bookmarks",
     m = { ":Telescope marks<cr>", "Bookmarks" },
   },
   t = {
+    name = "Terminal",
     t = { ":ToggleTerm<cr>", "Split Below" },
     f = { toggle_float, "Floating Terminal" },
     l = { toggle_lazygit, "LazyGit" },
@@ -81,6 +86,26 @@ local mappings = {
     S = { ":PackerStatus<cr>", "Packer Status" },
     u = { ":PackerUpdate<cr>", "Update Plugins" },
   },
+  -- debugger mappings --
+  d = {
+    name = "Debugger",
+    c = { "<cmd>lua require'dap'.continue()<cr>", "Continue" },
+    o = { "<cmd>lua require'dap'.step_over()<cr>", "Step Over" },
+    i = { "<cmd>lua require'dap'.step_into()<cr>", "Step Into" },
+    O = { "<cmd>lua require'dap'.step_out()<cr>", "Step Out" },
+    b = { "<cmd>lua require'dap'.toggle_breakpoint()<cr>", "Toggle Breakpoint" },
+    s = {
+      "<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<cr>",
+      "Set Breakpoint condition",
+    },
+    B = {
+      "<cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<cr>",
+      "Set Breakpoint log message",
+    },
+    n = { "<cmd>lua require'dap'.repl.open()<cr>", "Open" },
+    l = { "<cmd>lua require'dap'.run_last()<cr>", "Run Last" },
+  },
 }
+
 local opts = { prefix = "<leader>" }
 wk.register(mappings, opts)
