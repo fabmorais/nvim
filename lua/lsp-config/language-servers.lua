@@ -44,6 +44,7 @@ local servers = {
   "gopls",
   "golangci_lint_ls",
   "rust_analyzer",
+  "yamlls",
 }
 
 ---@diagnostic disable-next-line: undefined-global
