@@ -12,10 +12,8 @@ return require("packer").startup(function(use)
 		"nvim-telescope/telescope.nvim",
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
-
 	use("folke/which-key.nvim")
 	use("akinsho/toggleterm.nvim")
-
 	use({
 		"lewis6991/gitsigns.nvim",
 		requires = { "nvim-lua/plenary.nvim" },
@@ -23,11 +21,17 @@ return require("packer").startup(function(use)
 			require("gitsigns").setup({ current_line_blame = true })
 		end,
 	})
-
 	use("levouh/tint.nvim")
 	use("terrortylor/nvim-comment")
 	use("norcalli/nvim-colorizer.lua")
-	use("glepnir/dashboard-nvim")
+	use({
+		"glepnir/dashboard-nvim",
+		config = function()
+			require("dashboard-config")
+		end,
+		event = "VimEnter",
+		dependencies = { { "nvim-tree/nvim-web-devicons" } },
+	})
 	use("lukas-reineke/indent-blankline.nvim")
 	use("windwp/nvim-autopairs")
 	use({ "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" })
@@ -48,9 +52,12 @@ return require("packer").startup(function(use)
 	use("saadparwaiz1/cmp_luasnip") --> Snippets source for nvim-cmp
 	use("L3MON4D3/LuaSnip") --> Snippets plugin
 	use("simrat39/rust-tools.nvim")
-
+	use("github/copilot.vim")
 	use({
 		"glepnir/lspsaga.nvim",
 		branch = "main",
+		config = function()
+			require("lspsaga").setup({})
+		end,
 	})
 end)

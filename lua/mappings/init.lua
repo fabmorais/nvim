@@ -11,6 +11,7 @@ map("n", "<C-k>", "<C-w>k", { noremap = true, silent = false })
 map("v", "<", "<gv", { noremap = true, silent = false })
 map("v", ">", "<gv", { noremap = true, silent = false })
 map("n", "gv", ":norm ggVG <CR>", opts)
+map("i", "<C-J>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
 
 -- map(
 --   "n",
