@@ -41,6 +41,9 @@ return require("packer").startup(function(use)
 	use("rcarriga/nvim-dap-ui")
 	use("theHamsta/nvim-dap-virtual-text")
 
+	--> AI
+	use("github/copilot.vim")
+
 	--> lsp
 	use("williamboman/mason.nvim")
 	use("williamboman/mason-lspconfig.nvim")
@@ -52,7 +55,6 @@ return require("packer").startup(function(use)
 	use("saadparwaiz1/cmp_luasnip") --> Snippets source for nvim-cmp
 	use("L3MON4D3/LuaSnip") --> Snippets plugin
 	use("simrat39/rust-tools.nvim")
-	use("github/copilot.vim")
 	use({
 		"glepnir/lspsaga.nvim",
 		branch = "main",

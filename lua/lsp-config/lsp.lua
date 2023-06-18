@@ -55,7 +55,12 @@ require("lspconfig")["bashls"].setup({
 	capabilities = capabilities,
 })
 
-require("lspconfig")["terraform_lsp"].setup({
+-- require("lspconfig")["terraform_lsp"].setup({
+-- 	on_attach = on_attach,
+-- 	capabilities = capabilities,
+-- })
+
+require("lspconfig")["terraformls"].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
