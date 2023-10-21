@@ -42,7 +42,7 @@ return require("packer").startup(function(use)
 	use("theHamsta/nvim-dap-virtual-text")
 
 	--> AI
-	use("github/copilot.vim")
+	-- use("github/copilot.vim")
 
 	--> lsp
 	use("williamboman/mason.nvim")
