@@ -1,4 +1,12 @@
-require("indent_blankline").setup({
-	buftype_exclude = { "terminal" },
-	filetype_exclude = { "dashboard", "NvimTree", "packer" },
+require("ibl").setup({
+	exclude = {
+		buftypes = {
+			"terminal",
+		},
+		filetypes = {
+			"dashboard",
+			"NvimTree",
+			"packer",
+		},
+	},
 })
