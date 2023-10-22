@@ -56,8 +56,8 @@ return require("packer").startup(function(use)
 	use("L3MON4D3/LuaSnip") --> Snippets plugin
 	use("simrat39/rust-tools.nvim")
 	use({
-		"glepnir/lspsaga.nvim",
-		branch = "main",
+		"nvimdev/lspsaga.nvim",
+		after = "nvim-lspconfig",
 		config = function()
 			require("lspsaga").setup({})
 		end,
