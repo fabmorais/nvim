@@ -1,37 +1,35 @@
--- TODO: using defaults
 require("dashboard").setup({
-	theme = "hyper",
 	config = {
-		week_header = {
-			enable = true,
-		},
-		project = {
-			enable = true,
-		},
-		disable_move = true,
+		week_header = { enable = true },
 		shortcut = {
-			{ desc = "Update", icon = " ", group = "@variable", action = "update", key = "u" },
 			{
-				icon = " ",
-				desc = "Files",
-				group = "@variable",
+				desc = " Update",
+				-- group = "@variable",
+				group = "Number",
+				action = "MasonUpdate",
+				key = "u",
+			},
+			{
+				desc = " Files",
+				-- group = "@variable",
+				group = "Number",
 				action = "Telescope find_files",
 				key = "f",
 			},
 			{
-				icon = " ",
-				desc = "Apps",
-				group = "@variable",
-				action = "Telescope app",
-				key = "a",
+				desc = " Packer",
+				-- group = "@variable",
+				group = "Number",
+				action = "PackerSync",
+				key = "p",
 			},
 			{
-				icon = " ",
-				desc = "dotfiles",
-				group = "@variable",
+				desc = " dotfiles",
+				group = "Number",
 				action = "Telescope dotfiles",
 				key = "d",
 			},
 		},
+		footer = { "@fab - https://github.com/fabmorais" },
 	},
 })
