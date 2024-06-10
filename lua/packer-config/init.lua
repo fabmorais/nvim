@@ -41,8 +41,20 @@ return require("packer").startup(function(use)
 	use("rcarriga/nvim-dap-ui")
 	use("theHamsta/nvim-dap-virtual-text")
 	use({ "nvim-neotest/nvim-nio" })
+
 	--> AI
-	-- use("github/copilot.vim")
+	use({
+		"jackMort/ChatGPT.nvim",
+		config = function()
+			require("chatgpt").setup()
+		end,
+		requires = {
+			"MunifTanjim/nui.nvim",
+			"nvim-lua/plenary.nvim",
+			"folke/trouble.nvim",
+			"nvim-telescope/telescope.nvim",
+		},
+	})
 
 	--> lsp
 	use("williamboman/mason.nvim")
