@@ -41,7 +41,7 @@ return require("packer").startup(function(use)
 	use({ "catppuccin/nvim", as = "catppuccin" })
 	use({ "folke/tokyonight.nvim" })
 
-	--> debugging
+	--> Debugging
 	use("mfussenegger/nvim-dap")
 	use("rcarriga/nvim-dap-ui")
 	use("theHamsta/nvim-dap-virtual-text")
@@ -61,7 +61,7 @@ return require("packer").startup(function(use)
 		},
 	})
 
-	--> lsp
+	--> Lsp
 	use("williamboman/mason.nvim")
 	use("williamboman/mason-lspconfig.nvim")
 	use("neovim/nvim-lspconfig") --> Collection of configurations for built-in LSP client
