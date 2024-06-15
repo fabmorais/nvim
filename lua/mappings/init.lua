@@ -15,10 +15,12 @@ map("i", "<C-J>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
 map("n", "<C-d>", "<C-d>zz", { noremap = true, silent = false })
 map("n", "<C-u>", "<C-u>zz", { noremap = true, silent = false })
 
--- Create custom keybindings for terminal navigation
 -- Use <C-j> to move to the split below and <C-k> to move to the split above from terminal
+-- <C-h> and <C-l> move between NvimTreeToggle and terminal
 map("t", "<C-j>", "<C-\\><C-n><C-w>j", { noremap = true, silent = true })
 map("t", "<C-k>", "<C-\\><C-n><C-w>k", { noremap = true, silent = true })
+map("t", "<C-h>", "<C-\\><C-n><C-w>h", { noremap = true, silent = true })
+map("t", "<C-l>", "<C-\\><C-n><C-w>l", { noremap = true, silent = true })
 
 -- map(
 --   "n",
