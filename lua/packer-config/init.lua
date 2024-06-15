@@ -83,4 +83,12 @@ return require("packer").startup(function(use)
 			require("lspsaga").setup({})
 		end,
 	})
+
+	--> Auto Session
+	use({
+		"rmagatti/auto-session",
+		config = function()
+			require("auto-session").setup()
+		end,
+	})
 end)
