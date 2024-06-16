@@ -32,7 +32,7 @@ local mappings = {
 	["/"] = { ":CommentToggle<cr>", "Toggle Comment" },
 	c = {
 		name = "Dashboard",
-		c = { ":Dashboard<cr>", "Dashboard" },
+		c = { ":Dashboard<cr>", "Open dashboard" },
 	},
 	q = { ":q<cr>", "Quit" },
 	Q = { ":wq<cr>", "Save & Quit" },
