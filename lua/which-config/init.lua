@@ -29,21 +29,26 @@ local toggle_lazygit = function()
 end
 
 local mappings = {
-	["/"] = { ":CommentToggle<cr>", "Toggle Comment" },
-	c = { ":67,69CommentToggle<cr>", "Range Toggle Comment" },
+	c = {
+		name = "Dashboard",
+		c = { ":Dashboard<cr>", "Dashboard" },
+	},
 	q = { ":q<cr>", "Quit" },
 	Q = { ":wq<cr>", "Save & Quit" },
 	w = { ":w<cr>", "Save" },
 	x = { ":bdelete<cr>", "Close" },
-	-- d = { ":Dashboard<cr>", "Dashboard" },
 	E = { ":e ~/.config/nvim/init.lua<cr>", "Edit config" },
 	f = {
 		name = "Telescope",
-		f = { ":Telescope find_files<cr>", "Telescope Find Files" },
-		g = { ":Telescope live_grep<cr>", "Telescope Live Grep" },
-		o = { ":Telescope oldfiles<cr>", "Telescope Old Files" },
-		h = { ":Telescope keymaps<cr>", "Telescope Keymaps" },
-		b = { ":Telescope buffers<cr>", "Telescope Buffers" },
+		f = { ":Telescope find_files<cr>", "Telescope find files" },
+		g = { ":Telescope live_grep<cr>", "Telescope live grep" },
+		o = { ":Telescope oldfiles<cr>", "Telescope find old files" },
+		h = { ":Telescope help_tags<cr>", "Telescope help page" },
+		b = { ":Telescope buffers<cr>", "Telescope find buffers" },
+		m = { ":Telescope marks<CR>", "telescope find marks" },
+		z = { ":Telescope current_buffer_fuzzy_find<CR>", "telescope find in current buffer" },
+		c = { ":Telescope git_commits<CR>", "telescope git commits" },
+		s = { ":Telescope git_status<CR>", "telescope git status" },
 	},
 	g = {
 		name = "ChatGPT",
