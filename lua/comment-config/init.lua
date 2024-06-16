@@ -1,7 +1,5 @@
 require("nvim_comment").setup({
-	-- line_mapping = "<leader>/",
 	line_mapping = "gcc",
-	-- operator_mapping = "<leader>c",
 	operator_mapping = "gc",
 	comment_chunk_text_object = "ic",
 	comment_empty = false,
