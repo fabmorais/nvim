@@ -21,6 +21,7 @@ return require("packer").startup(function(use)
 		end,
 	})
 	use("levouh/tint.nvim")
+	use("terrortylor/nvim-comment")
 	use("norcalli/nvim-colorizer.lua")
 	use({
 		"glepnir/dashboard-nvim",

@@ -29,6 +29,7 @@ local toggle_lazygit = function()
 end
 
 local mappings = {
+	["/"] = { ":CommentToggle<cr>", "Toggle Comment" },
 	c = {
 		name = "Dashboard",
 		c = { ":Dashboard<cr>", "Dashboard" },
