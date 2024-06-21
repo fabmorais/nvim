@@ -2,12 +2,13 @@ require("dashboard").setup({
 	config = {
 		week_header = { enable = true },
 		shortcut = {
+			{ desc = "󰊳  Lazy Update", group = "@property", action = "Lazy update", key = "u" },
 			{
-				desc = " Update",
+				desc = " Mason Update",
 				-- group = "@variable",
 				group = "Number",
 				action = "MasonUpdate",
-				key = "u",
+				key = "m",
 			},
 			{
 				desc = " Files",
@@ -15,19 +16,6 @@ require("dashboard").setup({
 				group = "Number",
 				action = "Telescope find_files",
 				key = "f",
-			},
-			{
-				desc = " Packer",
-				-- group = "@variable",
-				group = "Number",
-				action = "PackerSync",
-				key = "p",
-			},
-			{
-				desc = " dotfiles",
-				group = "Number",
-				action = "Telescope dotfiles",
-				key = "d",
 			},
 		},
 		footer = { "@fab - https://github.com/fabmorais" },

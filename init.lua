@@ -1,6 +1,6 @@
 require("settings")
 require("mappings")
-require("packer-config")
+require("lazy-config")
 require("colorschemes-config.dracula")
 require("nvim-tree-config")
 require("lsp-config.lsp")
