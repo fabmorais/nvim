@@ -12,6 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
 
 local plugins = {
 	{ "kyazdani42/nvim-tree.lua" },
@@ -47,9 +48,19 @@ local plugins = {
 	{ "lukas-reineke/indent-blankline.nvim" },
 	{ "windwp/nvim-autopairs" },
 	{ "sindrets/diffview.nvim", dependencies = "nvim-lua/plenary.nvim" },
+	{ "mbbill/undotree", lazy = true, cmd = "UndotreeToggle" }, -- see undo tree
 
+	--> Movement / Text Manipulation
+	{
+		"kylechui/nvim-surround", -- surround objects
+		version = "*", -- Use for stability; omit to use `main` branch for the latest features
+		event = "VeryLazy",
+		config = function()
+			require("nvim-surround").setup()
+		end,
+	},
 	--> Colorschemes
-	{ "mofiqul/dracula.nvim", event = "VeryLazy" },
+	{ "mofiqul/dracula.nvim" },
 	{ "ellisonleao/gruvbox.nvim", event = "VeryLazy" },
 	{ "catppuccin/nvim", name = "catppuccin", event = "VeryLazy" },
 	{ "folke/tokyonight.nvim", event = "VeryLazy" },
@@ -89,6 +100,7 @@ local plugins = {
 	{ "rafamadriz/friendly-snippets" },
 	{ "saadparwaiz1/cmp_luasnip" }, --> Snippets source for nvim-cmp
 	{ "simrat39/rust-tools.nvim" },
+	{ "gelguy/wilder.nvim", event = "VeryLazy", build = ":UpdateRemotePlugins" },
 	{
 		"nvimdev/lspsaga.nvim",
 		dependencies = "nvim-lspconfig",

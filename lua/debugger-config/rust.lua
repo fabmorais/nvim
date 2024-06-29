@@ -2,7 +2,8 @@ local dap = require("dap")
 
 dap.adapters.lldb = {
 	type = "executable",
-	command = "/opt/homebrew/opt/llvm/bin/lldb-vscode", -- adjust as needed, must be absolute path
+	-- command = "/opt/homebrew/opt/llvm/bin/lldb-vscode", -- adjust as needed, must be absolute path
+	command = "/usr/bin/lldb-vscode",
 	name = "lldb",
 }
 
