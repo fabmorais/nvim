@@ -4,6 +4,7 @@ local opts = { noremap = true, silent = true }
 vim.g.mapleader = " "
 
 map("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
+map("n", "<leader>u", ":UndotreeToggle<CR>", opts)
 map("n", "<C-h>", "<C-w>h", { noremap = true, silent = false })
 map("n", "<C-l>", "<C-w>l", { noremap = true, silent = false })
 map("n", "<C-j>", "<C-w>j", { noremap = true, silent = false })
