@@ -61,9 +61,10 @@ local plugins = {
 	},
 	--> Colorschemes
 	{ "mofiqul/dracula.nvim" },
-	{ "ellisonleao/gruvbox.nvim", event = "VeryLazy" },
-	{ "catppuccin/nvim", name = "catppuccin", event = "VeryLazy" },
-	{ "folke/tokyonight.nvim", event = "VeryLazy" },
+	{ "ellisonleao/gruvbox.nvim", lazy = true },
+	{ "catppuccin/nvim", name = "catppuccin", lazy = true },
+	{ "folke/tokyonight.nvim", lazy = true },
+	{ "navarasu/onedark.nvim", lazy = true },
 
 	--> Debugging
 	{ "mfussenegger/nvim-dap" },
