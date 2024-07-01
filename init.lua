@@ -1,7 +1,7 @@
 require("settings")
 require("mappings")
 require("lazy-config")
-require("colorschemes-config.dracula")
+require("colorschemes-config.default")
 require("nvim-tree-config")
 require("lsp-config.lsp")
 require("lsp-config.nvim-cmp")

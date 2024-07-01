@@ -65,6 +65,19 @@ local plugins = {
 	{ "catppuccin/nvim", name = "catppuccin", lazy = true },
 	{ "folke/tokyonight.nvim", lazy = true },
 	{ "navarasu/onedark.nvim", lazy = true },
+	{ "AlexvZyl/nordic.nvim", lazy = true },
+	{ "maxmx03/fluoromachine.nvim", name = "synthwave", lazy = true },
+	{ "rose-pine/neovim", name = "rose-pine", lazy = true },
+	{
+		"hardhackerlabs/theme-vim",
+		name = "hardhacker",
+		lazy = true,
+		config = function()
+			vim.g.hardhacker_hide_tilde = 1
+			vim.g.hardhacker_keyword_italic = 1
+			vim.g.hardhacker_custom_highlights = {}
+		end,
+	},
 
 	--> Debugging
 	{ "mfussenegger/nvim-dap" },
