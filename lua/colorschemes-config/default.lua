@@ -1,1 +1,0 @@
-/home/fab/.config/nvim/lua/colorschemes-config/dracula.lua
