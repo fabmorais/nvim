@@ -25,6 +25,7 @@ local plugins = {
 		"nvim-telescope/telescope.nvim",
 		dependencies = { "nvim-lua/plenary.nvim" },
 	},
+	{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 	{ "folke/which-key.nvim" },
 	{ "akinsho/toggleterm.nvim" },
 	{
@@ -61,7 +62,6 @@ local plugins = {
 	},
 	--> Colorschemes
 	{ "mofiqul/dracula.nvim" },
-	{ "ellisonleao/gruvbox.nvim", lazy = true },
 	{ "catppuccin/nvim", name = "catppuccin", lazy = true },
 	{ "folke/tokyonight.nvim", lazy = true },
 	{ "navarasu/onedark.nvim", lazy = true },
