@@ -43,6 +43,7 @@ local mappings = {
 		name = "Telescope",
 		f = { ":Telescope find_files<cr>", "Telescope find files" },
 		g = { ":Telescope live_grep<cr>", "Telescope live grep" },
+		r = { ":Telescope grep_string<cr>", "Telescope grep string" },
 		o = { ":Telescope oldfiles<cr>", "Telescope find old files" },
 		h = { ":Telescope help_tags<cr>", "Telescope help page" },
 		b = { ":Telescope buffers<cr>", "Telescope find buffers" },
