@@ -12,6 +12,7 @@ map("n", "<C-k>", "<C-w>k", { noremap = true, silent = false })
 map("v", "<", "<gv", { noremap = true, silent = false })
 map("v", ">", "<gv", { noremap = true, silent = false })
 -- map("i", "<C-J>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
+map("i", "<C-J>", "codeium#Accept()", { silent = true, expr = true })
 map("n", "<C-d>", "<C-d>zz", { noremap = true, silent = false })
 map("n", "<C-u>", "<C-u>zz", { noremap = true, silent = false })
 
