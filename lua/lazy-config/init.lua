@@ -16,6 +16,7 @@ vim.g.maplocalleader = "\\"
 
 local plugins = {
 	{ "kyazdani42/nvim-tree.lua" },
+	{ "echasnovski/mini.icons", version = "*" },
 	{ "rcarriga/nvim-notify" },
 	{ "nvim-lualine/lualine.nvim" },
 	{ "romgrk/barbar.nvim" },
@@ -77,19 +78,10 @@ local plugins = {
 	{ "theHamsta/nvim-dap-virtual-text" },
 	{ "nvim-neotest/nvim-nio" },
 
-	--> AI
+	-- --> AI
 	{
-		"jackMort/ChatGPT.nvim",
-		event = "VeryLazy",
-		config = function()
-			require("chatgpt").setup()
-		end,
-		dependencies = {
-			"MunifTanjim/nui.nvim",
-			"nvim-lua/plenary.nvim",
-			"folke/trouble.nvim",
-			"nvim-telescope/telescope.nvim",
-		},
+		"Exafunction/codeium.vim",
+		event = "BufEnter",
 	},
 
 	--> Lsp
