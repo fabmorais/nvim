@@ -83,6 +83,18 @@ local plugins = {
 		"Exafunction/codeium.vim",
 		event = "BufEnter",
 	},
+	{
+		"CopilotC-Nvim/CopilotChat.nvim",
+		branch = "canary",
+		dependencies = {
+			{ "github/copilot.vim" },
+			{ "nvim-lua/plenary.nvim" },
+		},
+		build = "make tiktoken",
+		opts = {
+			debug = true,
+		},
+	},
 
 	--> Lsp
 	{ "williamboman/mason.nvim" },
