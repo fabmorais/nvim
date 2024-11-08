@@ -27,8 +27,23 @@ local plugins = {
 		dependencies = { "nvim-lua/plenary.nvim" },
 	},
 	{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-	{ "folke/which-key.nvim" },
+	{
+		"folke/which-key.nvim",
+		event = "VeryLazy",
+		keys = {
+			{
+				"<leader>?",
+				function()
+					require("which-key").show({ global = false })
+				end,
+				desc = "Buffer Local Keymaps (which-key)",
+			},
+		},
+	},
 	{ "akinsho/toggleterm.nvim" },
+
+	--> Git
+	{ "tpope/vim-fugitive" },
 	{
 		"lewis6991/gitsigns.nvim",
 		dependencies = { "nvim-lua/plenary.nvim" },
@@ -36,6 +51,7 @@ local plugins = {
 			require("gitsigns").setup({ current_line_blame = true })
 		end,
 	},
+
 	{ "levouh/tint.nvim" },
 	{ "terrortylor/nvim-comment" },
 	{ "norcalli/nvim-colorizer.lua" },
