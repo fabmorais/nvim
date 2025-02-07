@@ -20,9 +20,9 @@ wk.add({
 		{ "<leader>w", "<cmd>w<cr>", desc = "Write" },
 	},
 	-- Dashboard
-	{ "<leader>d", group = "Dashboard" }, -- group
+	{ "<leader>c", group = "Dashboard" }, -- group
 	{
-		"<leader>db",
+		"<leader>cb",
 		":Dashboard<cr>",
 		desc = "Open dashboard",
 		mode = "n",
@@ -204,6 +204,63 @@ wk.add({
 		mode = "n",
 	},
 
+	-- Debugger
+	{ "<leader>d", group = "Debugger" }, -- group
+	{
+		"<leader>dc",
+		"<cmd>lua require'dap'.continue()<cr>",
+		desc = "Continue",
+		mode = "n",
+	},
+	{
+		"<leader>do",
+		"<cmd>lua require'dap'.step_over()<cr>",
+		desc = "Step Over",
+		mode = "n",
+	},
+	{
+		"<leader>di",
+		"<cmd>lua require'dap'.step_into()<cr>",
+		desc = "Step Into",
+		mode = "n",
+	},
+	{
+		"<leader>dO",
+		"<cmd>lua require'dap'.step_out()<cr>",
+		desc = "Step Out",
+		mode = "n",
+	},
+	{
+		"<leader>db",
+		"<cmd>lua require'dap'.toggle_breakpoint()<cr>",
+		desc = "Toggle Breakpoint",
+		mode = "n",
+	},
+	{
+		"<leader>ds",
+		"<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<cr>",
+		desc = "Set Breakpoint condition",
+		mode = "n",
+	},
+	{
+		"<leader>dB",
+		"<cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<cr>",
+		desc = "Set Breakpoint log message",
+		mode = "n",
+	},
+	{
+		"<leader>dn",
+		"<cmd>lua require'dap'.repl.open()<cr>",
+		desc = "Open",
+		mode = "n",
+	},
+	{
+		"<leader>dl",
+		"<cmd>lua require'dap'.run_last()<cr>",
+		desc = "Run Last",
+		mode = "n",
+	},
+
 	-- Git
 	{ "<leader>r", group = "Git" }, -- group
 	{
@@ -224,7 +281,12 @@ wk.add({
 		desc = "Stage Buffer",
 		mode = "n",
 	},
-	{ "<leader>rg", "<cmd>lua require 'gitsigns'.status()<cr>", desc = "Status", mode = "n" },
+	{
+		"<leader>rg",
+		"<cmd>lua require 'gitsigns'.status()<cr>",
+		desc = "Status",
+		mode = "n",
+	},
 	{
 		"<leader>rb",
 		"<cmd>lua require 'gitsigns'.blame_line()<cr>",
