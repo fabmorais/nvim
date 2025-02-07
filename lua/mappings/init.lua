@@ -16,6 +16,10 @@ map("i", "<C-J>", "codeium#Accept()", { silent = true, expr = true })
 map("n", "<C-d>", "<C-d>zz", { noremap = true, silent = false })
 map("n", "<C-u>", "<C-u>zz", { noremap = true, silent = false })
 
+-- move alt+jk to move line up and down
+map("n", "<A-k>", ":m .-2<CR>==", opts)
+map("n", "<A-j>", ":m .+1<CR>==", opts)
+
 -- Terminal escapes
 map("t", "<C-j>", "<C-\\><C-n><C-w>j", opts)
 map("t", "<C-k>", "<C-\\><C-n><C-w>k", opts)

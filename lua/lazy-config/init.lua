@@ -87,6 +87,7 @@ local plugins = {
 	{ "rose-pine/neovim", name = "rose-pine", lazy = true },
 	{ "kdheepak/monochrome.nvim", lazy = true },
 	{ "hardhackerlabs/theme-vim", name = "hardhacker", lazy = true },
+	{ "nyoom-engineering/oxocarbon.nvim", name = "oxocarbon", lazy = true },
 
 	--> Debugging
 	{ "mfussenegger/nvim-dap" },
@@ -99,18 +100,18 @@ local plugins = {
 		"Exafunction/codeium.vim",
 		event = "BufEnter",
 	},
-	{
-		"CopilotC-Nvim/CopilotChat.nvim",
-		branch = "canary",
-		dependencies = {
-			{ "github/copilot.vim" },
-			{ "nvim-lua/plenary.nvim" },
-		},
-		build = "make tiktoken",
-		opts = {
-			debug = true,
-		},
-	},
+	-- {
+	-- 	"CopilotC-Nvim/CopilotChat.nvim",
+	-- 	branch = "canary",
+	-- 	dependencies = {
+	-- 		{ "github/copilot.vim" },
+	-- 		{ "nvim-lua/plenary.nvim" },
+	-- 	},
+	-- 	build = "make tiktoken",
+	-- 	opts = {
+	-- 		debug = true,
+	-- 	},
+	-- },
 
 	--> Lsp
 	{ "williamboman/mason.nvim" },
