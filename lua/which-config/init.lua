@@ -36,6 +36,12 @@ wk.add({
 		mode = "n",
 	},
 	{
+		"<leader>tr",
+		"<cmd>ToggleTerm direction=vertical size=60<cr>",
+		desc = "Split right",
+		mode = "n",
+	},
+	{
 		"<leader>tf",
 		toggle_float,
 		desc = "Floating Terminal",

@@ -95,29 +95,23 @@ local plugins = {
 	{ "theHamsta/nvim-dap-virtual-text" },
 	{ "nvim-neotest/nvim-nio" },
 
-	-- --> AI
-	{
-		"Exafunction/codeium.vim",
-		event = "BufEnter",
-	},
-	-- {
-	-- 	"CopilotC-Nvim/CopilotChat.nvim",
-	-- 	branch = "canary",
-	-- 	dependencies = {
-	-- 		{ "github/copilot.vim" },
-	-- 		{ "nvim-lua/plenary.nvim" },
-	-- 	},
-	-- 	build = "make tiktoken",
-	-- 	opts = {
-	-- 		debug = true,
-	-- 	},
-	-- },
+	--> AI
+	{ "github/copilot.vim" },
 
 	--> Lsp
-	{ "williamboman/mason.nvim" },
-	{ "williamboman/mason-lspconfig.nvim" },
+	{
+		"mason-org/mason-lspconfig.nvim",
+		opts = {},
+		dependencies = {
+			{
+				"mason-org/mason.nvim",
+				opts = {},
+			},
+			"neovim/nvim-lspconfig",
+		},
+	},
 	{ "neovim/nvim-lspconfig" }, --> Collection of configurations for built-in LSP client
-	{ "jose-elias-alvarez/null-ls.nvim" }, --> inject lsp diagnistocs, formattings, code actions, and more ...
+	{ "nvimtools/none-ls.nvim" }, --> inject lsp diagnistocs, formattings, code actions, and more ...
 	{ "onsails/lspkind-nvim" }, --> vscode-like pictograms for neovim lsp completion items
 
 	--> Completions
