@@ -7,6 +7,7 @@ require("nvim-treesitter.configs").setup({
 		"python",
 		"yaml",
 		"vim",
+		"vimdoc",
 		"go",
 		"css",
 		"cpp",
@@ -17,6 +18,7 @@ require("nvim-treesitter.configs").setup({
 	},
 
 	sync_install = false,
+	auto_install = true,
 
 	highlight = {
 		enable = true,
@@ -28,13 +30,13 @@ require("nvim-treesitter.configs").setup({
 	},
 
 	rainbow = {
-		enable = true,
+		enable = false,
 		extended_mode = true,
 	},
 
 	refactor = {
 		highlight_definitions = {
-			enable = true,
+			enable = false,
 			-- Set to false if you have an `updatetime` of ~100.
 			clear_on_cursor_move = true,
 		},
