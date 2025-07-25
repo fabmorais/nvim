@@ -2,6 +2,7 @@ local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 
 vim.g.mapleader = " "
+vim.g.copilot_no_tab_map = true -- Disable Copilot tab mapping
 
 map("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 map("n", "<leader>u", ":UndotreeToggle<CR>", opts)
