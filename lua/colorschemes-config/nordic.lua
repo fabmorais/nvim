@@ -1,3 +1,3 @@
 require("nordic").setup({
-	transparent_bg = true,
+    transparent_bg = true,
 })
