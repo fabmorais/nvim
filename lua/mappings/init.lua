@@ -11,12 +11,6 @@ end
 -- NvimTree
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", with_desc("Toggle NvimTree"))
 
--- Window navigation
-keymap("n", "<C-h>", "<C-w>h", with_desc("Move to left window"))
-keymap("n", "<C-l>", "<C-w>l", with_desc("Move to right window"))
-keymap("n", "<C-j>", "<C-w>j", with_desc("Move to lower window"))
-keymap("n", "<C-k>", "<C-w>k", with_desc("Move to upper window"))
-
 -- Visual mode indentation
 keymap("v", "<", "<gv", with_desc("Indent left"))
 keymap("v", ">", ">gv", with_desc("Indent right"))
@@ -33,12 +27,17 @@ keymap("i", "<C-J>", 'copilot#Accept("<CR>")', {
 keymap("n", "<C-d>", "<C-d>zz", with_desc("Scroll down and center"))
 keymap("n", "<C-u>", "<C-u>zz", with_desc("Scroll up and center"))
 
--- Move lines
-keymap("n", "<C-k>", ":m .-2<CR>==", with_desc("Move line up"))
-keymap("n", "<C-j>", ":m .+1<CR>==", with_desc("Move line down"))
--- virtual mode
-keymap("v", "<C-j>", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
-keymap("v", "<C-k>", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
+-- Move lines up and down
+keymap("n", "<A-Down>", ":m .+1<CR>==", with_desc("Move line down"))
+keymap("n", "<A-Up>", ":m .-2<CR>==", with_desc("Move line up"))
+keymap("v", "<A-Down>", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
+keymap("v", "<A-U>", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
+
+-- Window navigation
+keymap("n", "<C-h>", "<C-w>h", with_desc("Move to left window"))
+keymap("n", "<C-l>", "<C-w>l", with_desc("Move to right window"))
+keymap("n", "<C-j>", "<C-w>j", with_desc("Move to lower window"))
+keymap("n", "<C-k>", "<C-w>k", with_desc("Move to upper window"))
 
 -- Terminal escapes
 keymap("t", "<C-k>", "<C-\\><C-n><C-w>k", opts)
@@ -46,7 +45,7 @@ keymap("t", "<C-j>", "<C-\\><C-n><C-w>j", opts)
 keymap("t", "<C-h>", "<C-\\><C-n><C-w>h", opts)
 keymap("t", "<C-l>", "<C-\\><C-n><C-w>l", opts)
 
--- Yank whole page to C-y
+-- Yank whole page to Ctrl-y
 keymap("n", "<C-y>", "<cmd>%y+<CR>", { desc = "file copy whole" })
 
 -- Comment
