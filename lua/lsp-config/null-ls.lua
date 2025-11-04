@@ -3,25 +3,14 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 local formatting = null_ls.builtins.formatting
 
 local sources = {
-    -- formatting.eslint,
-    -- formatting.eslint_d,
-    -- formatting.autopep8,
-    -- formatting.black,
-    -- formatting.shfmt,
     formatting.stylua,
-    -- formatting.gofmt,
-    -- formatting.goimports,
-    -- formatting.yapf,
-    -- formatting.terrafmt,
-    -- formatting.terraform_fmt,
-    -- formatting.uncrustify,
-    -- formatting.clang_format,
-    -- formatting.cmake_format,
-    -- formatting.tidy,
-    -- formatting.standardjs,
-    -- formatting.prettier_standard,
-    -- formatting.prettier,
-    -- formatting.rustfmt,
+    formatting.terraform_fmt,
+    formatting.black,
+    formatting.goimports,
+    formatting.shfmt,
+    formatting.yamlfmt,
+    formatting.prettier,
+    formatting.clang_format,
 }
 
 null_ls.setup({

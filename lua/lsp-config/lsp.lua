@@ -40,17 +40,34 @@ local servers = {
     "yamlls",
     "gopls",
     "golangci_lint_ls",
-    "ts_ls",
-    "emmet_ls",
-    "eslint",
-    "quick_lint_js",
+    -- Commented out: not installed
+    -- "ts_ls",
+    -- "emmet_ls",
+    -- "eslint",
+    -- "quick_lint_js",
     "ltex",
 }
 
 for _, lsp in ipairs(servers) do
-    require("lspconfig")[lsp].setup({
+    local default_config = vim.lsp.config[lsp] or {}
+
+    vim.lsp.config[lsp] = vim.tbl_extend("force", default_config, {
         on_attach = on_attach,
         capabilities = capabilities,
         flags = lsp_flags,
     })
+    vim.lsp.enable(lsp)
 end
+
+-- Rust: Enable format on save via rust-analyzer
+vim.api.nvim_create_autocmd("BufWritePre", {
+    pattern = "*.rs",
+    callback = function()
+        vim.lsp.buf.format({
+            async = false,
+            filter = function(client)
+                return client.name == "rust_analyzer"
+            end,
+        })
+    end,
+})

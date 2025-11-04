@@ -48,7 +48,10 @@ local plugins = {
         "lewis6991/gitsigns.nvim",
         dependencies = { "nvim-lua/plenary.nvim" },
         config = function()
-            require("gitsigns").setup({ current_line_blame = true })
+            require("gitsigns").setup({
+                current_line_blame = true,
+                signcolumn = true, -- Keep signcolumn enabled
+            })
         end,
     },
 
@@ -117,7 +120,11 @@ local plugins = {
     --> Completions
     { "hrsh7th/nvim-cmp" }, --> Autocompletion plugin
     { "hrsh7th/cmp-nvim-lsp" }, --> LSP source for nvim-cmp
-    { "L3MON4D3/LuaSnip" }, --> Snippets plugin
+    {
+        "L3MON4D3/LuaSnip", -- Snippets engine for Neovim written in Lua.
+        version = "v2.*",
+        build = "make install_jsregexp",
+    },
     { "rafamadriz/friendly-snippets" },
     { "saadparwaiz1/cmp_luasnip" }, --> Snippets source for nvim-cmp
     { "simrat39/rust-tools.nvim" },
@@ -126,7 +133,14 @@ local plugins = {
         "nvimdev/lspsaga.nvim",
         dependencies = "nvim-lspconfig",
         config = function()
-            require("lspsaga").setup({})
+            require("lspsaga").setup({
+                lightbulb = {
+                    enable = false, -- Disable to prevent text shifting
+                },
+                ui = {
+                    border = "rounded",
+                },
+            })
         end,
     },
 
