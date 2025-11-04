@@ -1,5 +1,8 @@
 local set = vim.opt
 
+-- Session options for better filetype/highlighting after restore
+set.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+
 set.mouse = "a"
 set.expandtab = true
 set.smarttab = true
