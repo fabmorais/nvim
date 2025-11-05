@@ -7,4 +7,10 @@ require("toggleterm").setup({
     start_in_insert = true,
     persist_size = true,
     direction = "horizontal",
+    float_opts = {
+        border = "curved",
+        width = 120,
+        height = 30,
+        winblend = 3,
+    },
 })

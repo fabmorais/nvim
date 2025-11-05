@@ -25,6 +25,7 @@ set.termguicolors = true
 set.relativenumber = true
 set.number = true
 set.cursorline = true
+set.signcolumn = "yes"
 
 set.hidden = true
 
