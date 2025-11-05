@@ -1,13 +1,13 @@
 local wk = require("which-key")
 
-local Terminal = require("toggleterm.terminal").Terminal
-
 local toggle_float = function()
+    local Terminal = require("toggleterm.terminal").Terminal
     local float = Terminal:new({ direction = "float" })
     return float:toggle()
 end
 
 local toggle_lazygit = function()
+    local Terminal = require("toggleterm.terminal").Terminal
     local lazygit = Terminal:new({ cmd = "lazygit", direction = "float" })
     return lazygit:toggle()
 end
