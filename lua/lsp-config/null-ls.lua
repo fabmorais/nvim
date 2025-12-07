@@ -8,7 +8,7 @@ local sources = {
     formatting.black,
     formatting.goimports,
     formatting.shfmt,
-    formatting.yamlfmt,
+    -- formatting.yamlfmt,
     formatting.prettier,
     formatting.clang_format,
 }
