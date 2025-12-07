@@ -11,9 +11,9 @@ local on_attach = function(client, bufnr)
 
     local opts = { noremap = true, silent = true }
 
-    buf_set_keymap("n", "gd", ":lua vim.lsp.buf.definition()<CR>", opts) --> jumps to the definition of the symbol under the cursor
+    buf_set_keymap("n", "gd", ":lua vim.lsp.buf.definition()<CR>", opts)     --> jumps to the definition of the symbol under the cursor
     buf_set_keymap("n", "gi", ":lua vim.lsp.buf.implementation()<CR>", opts) --> lists all the implementations for the symbol under the cursor in the quickfix window
-    buf_set_keymap("n", "gr", ":lua vim.lsp.buf.references()<CR>", opts) --> lists all the references to the symbl under the cursor in the quickfix window
+    buf_set_keymap("n", "gr", ":lua vim.lsp.buf.references()<CR>", opts)     --> lists all the references to the symbl under the cursor in the quickfix window
     buf_set_keymap("n", "[d", ":lua vim.diagnostic.goto_prev()<CR>", opts)
     buf_set_keymap("n", "]d", ":lua vim.diagnostic.goto_next()<CR>", opts)
 end

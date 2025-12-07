@@ -40,7 +40,7 @@ local plugins = {
     },
     {
         "romgrk/barbar.nvim",
-        event = "BufAdd",
+        -- event = "BufAdd",
         config = function()
             require("barbar-config")
         end,

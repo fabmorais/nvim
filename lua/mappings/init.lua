@@ -31,7 +31,7 @@ keymap("n", "<C-u>", "<C-u>zz", with_desc("Scroll up and center"))
 keymap("n", "<A-Down>", ":m .+1<CR>==", with_desc("Move line down"))
 keymap("n", "<A-Up>", ":m .-2<CR>==", with_desc("Move line up"))
 keymap("v", "<A-Down>", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
-keymap("v", "<A-U>", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
+keymap("v", "<A-Up>", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
 
 -- Window navigation
 keymap("n", "<C-h>", "<C-w>h", with_desc("Move to left window"))
