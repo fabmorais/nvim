@@ -23,6 +23,7 @@ local plugins = {
             require("nvim-tree-config")
         end,
     },
+    { "nvim-tree/nvim-web-devicons", lazy = false },
     { "echasnovski/mini.icons", version = "*", lazy = false },
     {
         "rcarriga/nvim-notify",
@@ -51,7 +52,7 @@ local plugins = {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
         event = { "BufReadPost", "BufNewFile" },
-        dependencies = "p00f/nvim-ts-rainbow",
+        cmd = { "TSInstall", "TSUpdate", "TSUninstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
         config = function()
             require("treesitter-config")
         end,
@@ -108,13 +109,6 @@ local plugins = {
     },
 
     --> UI enhancements
-    {
-        "levouh/tint.nvim",
-        event = "VeryLazy",
-        config = function()
-            require("tint-config")
-        end,
-    },
     {
         "terrortylor/nvim-comment",
         config = function()
@@ -222,7 +216,6 @@ local plugins = {
     { "nvim-neotest/nvim-nio", lazy = true },
 
     --> AI
-    { "github/copilot.vim", event = "InsertEnter" },
 
     --> LSP
     {
@@ -259,6 +252,7 @@ local plugins = {
         end,
     },
     { "hrsh7th/cmp-nvim-lsp", lazy = true },
+    { "hrsh7th/cmp-cmdline", event = "CmdlineEnter" },
     {
         "L3MON4D3/LuaSnip",
         version = "v2.*",
@@ -267,13 +261,12 @@ local plugins = {
     },
     { "rafamadriz/friendly-snippets", event = "InsertEnter" },
     { "saadparwaiz1/cmp_luasnip", event = "InsertEnter" },
-    { "simrat39/rust-tools.nvim", ft = "rust" },
     {
-        "gelguy/wilder.nvim",
-        event = "CmdlineEnter",
-        build = ":UpdateRemotePlugins",
+        "folke/noice.nvim",
+        event = "VeryLazy",
+        dependencies = { "MunifTanjim/nui.nvim" },
         config = function()
-            require("wilder-config")
+            require("noice-config")
         end,
     },
     {

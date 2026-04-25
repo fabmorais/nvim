@@ -1,21 +1,13 @@
 local on_attach = function(client, bufnr)
-    local function buf_set_keymap(...)
-        vim.api.nvim_buf_set_keymap(bufnr, ...)
-    end
+    vim.bo[bufnr].omnifunc = "v:lua.vim.lsp.omnifunc"
 
-    local function buf_set_option(...)
-        vim.api.nvim_buf_set_option(bufnr, ...)
-    end
+    local opts = { noremap = true, silent = true, buffer = bufnr }
 
-    buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
-
-    local opts = { noremap = true, silent = true }
-
-    buf_set_keymap("n", "gd", ":lua vim.lsp.buf.definition()<CR>", opts)     --> jumps to the definition of the symbol under the cursor
-    buf_set_keymap("n", "gi", ":lua vim.lsp.buf.implementation()<CR>", opts) --> lists all the implementations for the symbol under the cursor in the quickfix window
-    buf_set_keymap("n", "gr", ":lua vim.lsp.buf.references()<CR>", opts)     --> lists all the references to the symbl under the cursor in the quickfix window
-    buf_set_keymap("n", "[d", ":lua vim.diagnostic.goto_prev()<CR>", opts)
-    buf_set_keymap("n", "]d", ":lua vim.diagnostic.goto_next()<CR>", opts)
+    vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+    vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
+    vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+    vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
+    vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
 end
 
 ---@diagnostic disable-next-line: undefined-global
@@ -40,12 +32,7 @@ local servers = {
     "yamlls",
     "gopls",
     "golangci_lint_ls",
-    -- Commented out: not installed
-    -- "ts_ls",
-    -- "emmet_ls",
-    -- "eslint",
-    -- "quick_lint_js",
-    "ltex",
+    "kotlin_language_server",
 }
 
 for _, lsp in ipairs(servers) do

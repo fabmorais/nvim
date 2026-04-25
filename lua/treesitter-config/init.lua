@@ -15,6 +15,11 @@ require("nvim-treesitter.configs").setup({
         "rust",
         "toml",
         "terraform",
+        "kotlin",
+        "markdown",
+        "markdown_inline",
+        "bash",
+        "regex",
     },
 
     sync_install = false,
@@ -22,16 +27,12 @@ require("nvim-treesitter.configs").setup({
 
     highlight = {
         enable = true,
+        disable = { "markdown", "markdown_inline" },
         additional_vim_regex_highlighting = false,
     },
 
     indent = {
         enable = true,
-    },
-
-    rainbow = {
-        enable = false,
-        extended_mode = true,
     },
 
     refactor = {

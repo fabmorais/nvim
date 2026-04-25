@@ -22,7 +22,7 @@ wilder.set_option(
     "renderer",
     wilder.popupmenu_renderer({
         highlighter = wilder.basic_highlighter(),
-        left = { " ", wilder.popupmenu_devicons() },
+        left = { " " },
         right = { " ", wilder.popupmenu_scrollbar({ thumb_char = " " }) },
         highlights = { default = "WilderMenu", accent = "WilderAccent" },
     })
