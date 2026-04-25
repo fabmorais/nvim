@@ -25,14 +25,6 @@ local plugins = {
             require("neo-tree-config")
         end,
     },
-    {
-        "folke/snacks.nvim",
-        priority = 1000,
-        lazy = false,
-        opts = {
-            dim = { enabled = true },
-        },
-    },
     { "nvim-tree/nvim-web-devicons", lazy = false },
     { "echasnovski/mini.icons", version = "*", lazy = false },
     {
@@ -293,7 +285,9 @@ local plugins = {
         "rmagatti/auto-session",
         lazy = false,
         config = function()
-            require("auto-session").setup()
+            require("auto-session").setup({
+                bypass_session_save_file_types = { "neo-tree" },
+            })
         end,
     },
 }
