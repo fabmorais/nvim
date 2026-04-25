@@ -17,11 +17,21 @@ vim.g.maplocalleader = "\\"
 local plugins = {
     --> UI
     {
-        "kyazdani42/nvim-tree.lua",
-        cmd = "NvimTreeToggle",
+        "nvim-neo-tree/neo-tree.nvim",
+        branch = "v3.x",
+        cmd = "Neotree",
+        dependencies = { "nvim-lua/plenary.nvim", "MunifTanjim/nui.nvim" },
         config = function()
-            require("nvim-tree-config")
+            require("neo-tree-config")
         end,
+    },
+    {
+        "folke/snacks.nvim",
+        priority = 1000,
+        lazy = false,
+        opts = {
+            dim = { enabled = true },
+        },
     },
     { "nvim-tree/nvim-web-devicons", lazy = false },
     { "echasnovski/mini.icons", version = "*", lazy = false },
@@ -177,7 +187,7 @@ local plugins = {
                 filetypes_denylist = {
                     "dashboard",
                     "alpha",
-                    "NvimTree",
+                    "neo-tree",
                     "lazy",
                     "help",
                     "terminal",
