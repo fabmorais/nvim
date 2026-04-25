@@ -25,15 +25,27 @@ local plugins = {
             require("neo-tree-config")
         end,
     },
+    {
+        "folke/snacks.nvim",
+        priority = 1000,
+        lazy = false,
+        opts = {
+            notifier = {
+                enabled = true,
+                timeout = 5000,
+                date_format = false,
+            },
+        },
+    },
     { "nvim-tree/nvim-web-devicons", lazy = false },
     { "echasnovski/mini.icons", version = "*", lazy = false },
-    {
-        "rcarriga/nvim-notify",
-        event = "VeryLazy",
-        config = function()
-            require("notify-config")
-        end,
-    },
+    -- {
+    --     "rcarriga/nvim-notify",
+    --     event = "VeryLazy",
+    --     config = function()
+    --         require("notify-config")
+    --     end,
+    -- },
     {
         "nvim-lualine/lualine.nvim",
         event = "VeryLazy",
