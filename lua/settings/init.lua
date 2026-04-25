@@ -28,7 +28,6 @@ set.cursorline = true
 set.signcolumn = "yes"
 set.laststatus = 3
 
-
 vim.diagnostic.config({
     signs = {
         text = {
