@@ -8,6 +8,9 @@ require("neo-tree").setup({
     },
     window = {
         width = 30,
+        mappings = {
+            ["<tab>"] = "toggle_node",
+        },
     },
     default_component_configs = {
         diagnostics = {
