@@ -22,7 +22,7 @@ set.scrolloff = 5
 set.fileencoding = "utf-8"
 set.termguicolors = true
 
-set.timeoutlen = 200
+set.timeoutlen = 100
 
 set.relativenumber = true
 set.number = true
