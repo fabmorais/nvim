@@ -1,4 +1,4 @@
-require("bufferline").setup({
+require("barbar").setup({
     animation = true,
     closable = true,
     clickable = true,

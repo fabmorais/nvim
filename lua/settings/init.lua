@@ -26,8 +26,26 @@ set.relativenumber = true
 set.number = true
 set.cursorline = true
 set.signcolumn = "yes"
+set.laststatus = 3
 
-set.hidden = true
+
+vim.diagnostic.config({
+    signs = {
+        text = {
+            [vim.diagnostic.severity.ERROR] = "󰅚",
+            [vim.diagnostic.severity.WARN] = "󰀪",
+            [vim.diagnostic.severity.INFO] = "󰋽",
+            [vim.diagnostic.severity.HINT] = "󰌶",
+        },
+    },
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "markdown",
+    callback = function()
+        vim.treesitter.stop()
+    end,
+})
 
 set.list = true
 -- set.listchars:append("space:⋅")

@@ -1,7 +1,5 @@
 local keymap = vim.keymap.set
 vim.g.mapleader = " "
-vim.g.copilot_no_tab_map = true -- Disable Copilot tab mapping
-
 local opts = { noremap = true, silent = true }
 
 local function with_desc(desc)
@@ -14,14 +12,6 @@ keymap("n", "<leader>e", ":NvimTreeToggle<CR>", with_desc("Toggle NvimTree"))
 -- Visual mode indentation
 keymap("v", "<", "<gv", with_desc("Indent left"))
 keymap("v", ">", ">gv", with_desc("Indent right"))
-
--- Copilot accept
-keymap("i", "<C-J>", 'copilot#Accept("<CR>")', {
-    silent = true,
-    expr = true,
-    replace_keycodes = false,
-    desc = "Copilot Accept",
-})
 
 -- Centered scroll
 keymap("n", "<C-d>", "<C-d>zz", with_desc("Scroll down and center"))
