@@ -6,8 +6,8 @@ local function with_desc(desc)
     return { desc = desc, noremap = true, silent = true }
 end
 
--- NvimTree
-keymap("n", "<leader>e", ":NvimTreeToggle<CR>", with_desc("Toggle NvimTree"))
+-- Neo-tree
+keymap("n", "<leader>e", ":Neotree toggle<CR>", with_desc("Toggle Neo-tree"))
 
 -- Visual mode indentation
 keymap("v", "<", "<gv", with_desc("Indent left"))
