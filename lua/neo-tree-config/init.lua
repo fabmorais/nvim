@@ -3,13 +3,23 @@ require("neo-tree").setup({
         filtered_items = {
             hide_dotfiles = false,
             hide_gitignored = false,
+            never_show = { ".git" },
         },
         follow_current_file = { enabled = true },
     },
     window = {
         width = 30,
         mappings = {
-            ["<tab>"] = "toggle_node",
+            ["<space>"] = "noop",
+            ["<tab>"] = function(state)
+                local node = state.tree:get_node()
+                if node.type == "directory" then
+                    require("neo-tree.sources.filesystem.commands").toggle_node(state)
+                else
+                    require("neo-tree.sources.common.commands").toggle_preview(state)
+                end
+            end,
+            ["/"] = "noop",
         },
     },
     default_component_configs = {
