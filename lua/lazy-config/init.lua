@@ -78,6 +78,17 @@ local plugins = {
         "nvim-telescope/telescope.nvim",
         cmd = "Telescope",
         dependencies = { "nvim-lua/plenary.nvim" },
+        config = function()
+            require("telescope").setup({
+                defaults = {
+                    preview = {
+                        treesitter = {
+                            disable = { "markdown", "markdown_inline" },
+                        },
+                    },
+                },
+            })
+        end,
     },
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make", lazy = true },
 
@@ -195,6 +206,7 @@ local plugins = {
                     "lazy",
                     "help",
                     "terminal",
+                    "markdown",
                 },
                 under_cursor = true,
                 min_count_to_highlight = 2,
@@ -298,7 +310,8 @@ local plugins = {
         lazy = false,
         config = function()
             require("auto-session").setup({
-                bypass_session_save_file_types = { "neo-tree" },
+                bypass_save_filetypes = { "neo-tree" },
+                pre_save_cmds = { "tabdo Neotree close" },
             })
         end,
     },
