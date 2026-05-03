@@ -6,8 +6,15 @@ local function with_desc(desc)
     return { desc = desc, noremap = true, silent = true }
 end
 
--- Neo-tree
-keymap("n", "<leader>e", ":Neotree toggle<CR>", with_desc("Toggle Neo-tree"))
+-- Oil (file explorer as buffer)
+keymap("n", "-", "<cmd>Oil<CR>", with_desc("Open parent directory (oil)"))
+keymap("n", "<leader>e", function()
+    if vim.bo.filetype == "oil" then
+        require("oil").close()
+    else
+        vim.cmd("Oil")
+    end
+end, with_desc("Toggle oil"))
 
 -- Visual mode indentation
 keymap("v", "<", "<gv", with_desc("Indent left"))
