@@ -1,7 +1,7 @@
 local set = vim.opt
 
 -- Session options for better filetype/highlighting after restore
-set.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+set.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal"
 
 set.mouse = "a"
 set.expandtab = true
@@ -42,7 +42,7 @@ vim.diagnostic.config({
 })
 
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = "markdown",
+    pattern = { "markdown", "html" },
     callback = function()
         vim.treesitter.stop()
     end,

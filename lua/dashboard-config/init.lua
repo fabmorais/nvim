@@ -7,7 +7,7 @@ require("dashboard").setup({
                 desc = " Mason Update",
                 -- group = "@variable",
                 group = "Number",
-                action = "MasonUpdate",
+                action = "Mason",
                 key = "m",
             },
             {

@@ -17,12 +17,11 @@ vim.g.maplocalleader = "\\"
 local plugins = {
     --> UI
     {
-        "nvim-neo-tree/neo-tree.nvim",
-        branch = "v3.x",
-        cmd = "Neotree",
-        dependencies = { "nvim-lua/plenary.nvim", "MunifTanjim/nui.nvim" },
+        "stevearc/oil.nvim",
+        lazy = false,
+        dependencies = { "nvim-tree/nvim-web-devicons" },
         config = function()
-            require("neo-tree-config")
+            require("oil-config")
         end,
     },
     {
@@ -195,18 +194,18 @@ local plugins = {
             require("illuminate").configure({
                 providers = {
                     "lsp",
-                    "treesitter",
                     "regex",
                 },
                 delay = 100,
                 filetypes_denylist = {
                     "dashboard",
                     "alpha",
-                    "neo-tree",
+                    "oil",
                     "lazy",
                     "help",
                     "terminal",
                     "markdown",
+                    "html",
                 },
                 under_cursor = true,
                 min_count_to_highlight = 2,
@@ -305,16 +304,7 @@ local plugins = {
     },
 
     --> Auto Session
-    {
-        "rmagatti/auto-session",
-        lazy = false,
-        config = function()
-            require("auto-session").setup({
-                bypass_save_filetypes = { "neo-tree" },
-                pre_save_cmds = { "tabdo Neotree close" },
-            })
-        end,
-    },
+    { "rmagatti/auto-session", lazy = false },
 }
 
 require("lazy").setup(plugins, {})
