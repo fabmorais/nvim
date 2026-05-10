@@ -33,6 +33,7 @@ local servers = {
     "gopls",
     "golangci_lint_ls",
     "kotlin_language_server",
+    "helm_ls",
 }
 
 for _, lsp in ipairs(servers) do

@@ -11,7 +11,7 @@ require("oil").setup({
     },
     win_options = {
         wrap = false,
-        signcolumn = "yes",
+        signcolumn = "yes:2",
         cursorline = true,
         foldcolumn = "0",
         spell = false,

@@ -27,7 +27,7 @@ require("nvim-treesitter.configs").setup({
 
     highlight = {
         enable = true,
-        disable = { "markdown", "markdown_inline", "html" },
+        disable = { "markdown", "markdown_inline", "html", "bash" },
         additional_vim_regex_highlighting = false,
     },
 

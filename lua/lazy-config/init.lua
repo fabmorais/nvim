@@ -19,9 +19,13 @@ local plugins = {
     {
         "stevearc/oil.nvim",
         lazy = false,
-        dependencies = { "nvim-tree/nvim-web-devicons" },
+        dependencies = {
+            "nvim-tree/nvim-web-devicons",
+            "refractalize/oil-git-status.nvim",
+        },
         config = function()
             require("oil-config")
+            require("oil-git-status").setup()
         end,
     },
     {
@@ -177,6 +181,7 @@ local plugins = {
         end,
     },
     { "mbbill/undotree", cmd = "UndotreeToggle" },
+    { "isobit/vim-caddyfile", ft = "caddyfile" },
 
     --> Movement / Text Manipulation
     {
