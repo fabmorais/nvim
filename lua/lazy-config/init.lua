@@ -282,7 +282,6 @@ local plugins = {
         end,
     },
     { "hrsh7th/cmp-nvim-lsp", lazy = true },
-    { "hrsh7th/cmp-cmdline", event = "CmdlineEnter" },
     {
         "L3MON4D3/LuaSnip",
         version = "v2.*",
@@ -297,6 +296,14 @@ local plugins = {
         dependencies = { "MunifTanjim/nui.nvim" },
         config = function()
             require("noice-config")
+        end,
+    },
+    {
+        "gelguy/wilder.nvim",
+        event = "CmdlineEnter",
+        build = ":UpdateRemotePlugins",
+        config = function()
+            require("wilder-config")
         end,
     },
     {

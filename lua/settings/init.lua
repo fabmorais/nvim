@@ -61,19 +61,37 @@ vim.filetype.add({
 
 -- Re-run filetype detection on session-restored buffers (auto-session
 -- restores with noautocmd, so BufRead never fires for them)
+local function detect_ft(buf)
+    if vim.bo[buf].filetype ~= "" then
+        return
+    end
+    local name = vim.api.nvim_buf_get_name(buf)
+    if name == "" then
+        return
+    end
+    local ft = vim.filetype.match({ buf = buf, filename = name })
+    if ft then
+        vim.bo[buf].filetype = ft
+    end
+end
+
 vim.api.nvim_create_autocmd("BufEnter", {
     callback = function(args)
-        if vim.bo[args.buf].filetype ~= "" then
-            return
-        end
-        local name = vim.api.nvim_buf_get_name(args.buf)
-        if name == "" then
-            return
-        end
-        local ft = vim.filetype.match({ buf = args.buf, filename = name })
-        if ft then
-            vim.bo[args.buf].filetype = ft
-        end
+        detect_ft(args.buf)
+    end,
+})
+
+-- BufEnter doesn't fire for the buffer already active after session restore.
+-- Sweep all loaded buffers once everything finished initializing.
+vim.api.nvim_create_autocmd("VimEnter", {
+    callback = function()
+        vim.schedule(function()
+            for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+                if vim.api.nvim_buf_is_loaded(buf) then
+                    detect_ft(buf)
+                end
+            end
+        end)
     end,
 })
 
