@@ -108,3 +108,31 @@ keymap("n", "<Space>bw", ":BufferOrderByWindowNumber<CR>", opts)
 -- map("n", "<leader>ff", ":Telescope find_files<CR>", opts)
 -- map("n", "<leader>fg", ":Telescope live_grep<CR>", opts)
 -- map("n", "<leader>fh", ":Telescope keymaps<CR>", opts)
+
+--> Obsidian
+keymap("n", "<leader>on", "<cmd>Obsidian new<CR>", with_desc("Obsidian: new note"))
+keymap("n", "<leader>oo", "<cmd>Obsidian quick_switch<CR>", with_desc("Obsidian: quick switch"))
+keymap("n", "<leader>od", "<cmd>Obsidian today<CR>", with_desc("Obsidian: today's daily note"))
+keymap("n", "<leader>oy", "<cmd>Obsidian yesterday<CR>", with_desc("Obsidian: yesterday's daily note"))
+keymap("n", "<leader>os", "<cmd>Obsidian search<CR>", with_desc("Obsidian: search vault"))
+keymap("n", "<leader>ob", "<cmd>Obsidian backlinks<CR>", with_desc("Obsidian: backlinks"))
+keymap("n", "<leader>ot", "<cmd>Obsidian follow_link<CR>", with_desc("Obsidian: follow link"))
+keymap("n", "<leader>or", "<cmd>Obsidian rename<CR>", with_desc("Obsidian: rename note"))
+keymap("n", "<leader>op", "<cmd>Obsidian paste_img<CR>", with_desc("Obsidian: paste image"))
+keymap("n", "<leader>oT", "<cmd>Obsidian template<CR>", with_desc("Obsidian: insert template"))
+
+--> Quick wrap word under cursor
+keymap("n", '<leader>"', function()
+    local word = vim.fn.expand("<cword>")
+    if word == "" then
+        return
+    end
+    vim.cmd('normal! ciw"' .. word .. '"')
+end, with_desc('Wrap word in "..."'))
+keymap("n", "<leader>'", function()
+    local word = vim.fn.expand("<cword>")
+    if word == "" then
+        return
+    end
+    vim.cmd("normal! ciw'" .. word .. "'")
+end, with_desc("Wrap word in '...'"))

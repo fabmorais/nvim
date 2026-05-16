@@ -42,9 +42,18 @@ vim.diagnostic.config({
 })
 
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = { "markdown", "html", "sh", "bash", "zsh" },
+    pattern = { "html", "sh", "bash", "zsh" },
     callback = function()
         vim.treesitter.stop()
+    end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = { "markdown" },
+    callback = function()
+        vim.opt_local.wrap = true
+        vim.opt_local.linebreak = true
+        vim.opt_local.breakindent = true
     end,
 })
 

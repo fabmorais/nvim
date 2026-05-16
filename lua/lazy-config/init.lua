@@ -187,7 +187,14 @@ local plugins = {
     {
         "kylechui/nvim-surround",
         version = "*",
-        event = "VeryLazy",
+        keys = {
+            { "ys", mode = "n" },
+            { "yss", mode = "n" },
+            { "yS", mode = "n" },
+            { "ds", mode = "n" },
+            { "cs", mode = "n" },
+            { "S", mode = "x" },
+        },
         config = function()
             require("nvim-surround").setup()
         end,
@@ -317,6 +324,35 @@ local plugins = {
 
     --> Auto Session
     { "rmagatti/auto-session", lazy = false },
+
+    --> Notetaking
+    {
+        "obsidian-nvim/obsidian.nvim",
+        version = "*",
+        ft = "markdown",
+        cmd = { "Obsidian" },
+        dependencies = { "nvim-lua/plenary.nvim" },
+        config = function()
+            require("obsidian-config")
+        end,
+    },
+    {
+        "MeanderingProgrammer/render-markdown.nvim",
+        ft = { "markdown" },
+        dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
+        opts = {},
+    },
+
+    --> Neovim Lua dev
+    {
+        "folke/lazydev.nvim",
+        ft = "lua",
+        opts = {
+            library = {
+                { path = "${3rd}/luv/library", words = { "vim%.uv" } },
+            },
+        },
+    },
 }
 
 require("lazy").setup(plugins, {})

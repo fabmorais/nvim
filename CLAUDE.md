@@ -32,9 +32,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Known Workarounds
 
-**Treesitter crash on markdown** (Neovim 0.12.x bug): Opening markdown files with fenced code blocks triggers `attempt to call method 'range' (a nil value)` in `languagetree.lua`. Fixed by two complementary settings:
+**Treesitter crash on markdown** (Neovim 0.12.x + archived nvim-treesitter master): Opening markdown files with fenced code blocks used to trigger `attempt to call method 'range' (a nil value)` in `languagetree.lua`. Root cause: nvim-treesitter's `queries/markdown/injections.scm` ships a custom predicate `#set-lang-from-info-string!` (defined in its `query_predicates.lua`) that is incompatible with Neovim 0.12's treesitter internals. Neovim core ships an equivalent `injections.scm` for markdown that uses the standard `@injection.language` capture instead — no broken predicate.
 
-1. `disable = { "markdown", "markdown_inline" }` in `lua/treesitter-config/init.lua` highlight block — prevents nvim-treesitter from enabling it
-2. `vim.treesitter.stop()` FileType autocmd in `lua/settings/init.lua` — prevents Neovim's built-in treesitter from enabling it
+Fix: `queries/markdown/injections.scm` (this repo) is a verbatim copy of `/usr/share/nvim/runtime/queries/markdown/injections.scm`. Because the repo's `queries/` is earlier on `runtimepath` than the plugin's, this override wins and the broken predicate never runs. Treesitter highlight/indent for markdown stays fully enabled.
 
-Both are required. Remove both when upgrading to a Neovim version that fixes the bug.
+Remove the override only when nvim-treesitter master gets a 0.12-compatible release, OR when the config migrates to the `neovim-treesitter/nvim-treesitter` community fork.
