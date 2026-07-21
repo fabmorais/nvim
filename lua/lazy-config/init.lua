@@ -289,6 +289,7 @@ local plugins = {
         end,
     },
     { "hrsh7th/cmp-nvim-lsp", lazy = true },
+    { "hrsh7th/cmp-path", event = "InsertEnter" },
     {
         "L3MON4D3/LuaSnip",
         version = "v2.*",

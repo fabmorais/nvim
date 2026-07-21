@@ -6,6 +6,7 @@ set.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,te
 set.mouse = "a"
 set.expandtab = true
 set.smarttab = true
+set.autoindent = true
 set.shiftwidth = 4
 set.tabstop = 4
 
@@ -31,6 +32,7 @@ set.signcolumn = "yes"
 set.laststatus = 3
 
 vim.diagnostic.config({
+    virtual_lines = { current_line = true },
     signs = {
         text = {
             [vim.diagnostic.severity.ERROR] = "󰅚",
