@@ -1,3 +1,5 @@
 plugin
 .ccls-cache
 lua/colorschemes-config/default.lua
+lua/matugen.lua
+lua/plugins/base16.lua
